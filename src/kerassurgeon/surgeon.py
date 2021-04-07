@@ -505,7 +505,7 @@ class Surgeon:
                              'ThresholdedReLU',
                              'GaussianNoise',
                              'GaussianDropout',
-                             'PReLU'
+                             'PReLU',
                              'AlphaDropout'):
             # Pass-through layers
             outbound_mask = inbound_masks
