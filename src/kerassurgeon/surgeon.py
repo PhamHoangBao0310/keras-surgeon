@@ -505,11 +505,13 @@ class Surgeon:
                              'ThresholdedReLU',
                              'GaussianNoise',
                              'GaussianDropout',
-                             'PReLU',
                              'AlphaDropout'):
             # Pass-through layers
             outbound_mask = inbound_masks
             new_layer = layer
+        
+        elif layer_class == "PRelU":
+            continue
 
         elif layer_class == 'Reshape':
             outbound_mask = np.reshape(inbound_masks, layer.target_shape)
