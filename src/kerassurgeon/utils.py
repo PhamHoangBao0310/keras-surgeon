@@ -137,21 +137,31 @@ def sort_x_by_y(x, y):
 
 def single_element(x):
     """If x contains a single element, return it; otherwise return x"""
-    if isinstance(x, tf.Tensor):
-        return x
+    # if isinstance(x, tf.Tensor):
+    #     return x
 
-    if len(x) == 1:
-        x = x[0]
+    # if len(x) == 1:
+    #     x = x[0]
+    # return x
+    try:
+        if len(x) == 1:
+            x = x[0]
+    except TypeError:
+        return x
     return x
 
-
 def get_one_tensor(x):
-    if isinstance(x, tf.Tensor):
+    # if isinstance(x, tf.Tensor):
+    #     return x
+
+    # assert len(x) == 1
+    # return x[0]
+    try:
+        if len(x) == 1:
+            x = x[0]
+    except TypeError:
         return x
-
-    assert len(x) == 1
-    return x[0]
-
+    return x
 
 def bool_to_index(x):
     return [i for i, v in enumerate(x) if v]
